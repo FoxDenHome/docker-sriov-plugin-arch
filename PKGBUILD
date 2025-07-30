@@ -1,7 +1,7 @@
 # Maintainer: Doridian <archlinux@doridian.net>
 
 pkgname=docker-sriov-plugin-git
-pkgver=0.6.r16.gb8d6f3f
+pkgver=1.9.0.r2.ge80e4c4
 pkgrel=1
 pkgdesc='Docker networking plugin for SRIOV and passthrough interfaces'
 arch=('x86_64' 'i686')
