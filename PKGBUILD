@@ -1,25 +1,26 @@
 # Maintainer: Doridian <archlinux@doridian.net>
 
-pkgname=docker-sriov-plugin-git
-pkgver=1.9.0.r2.ge80e4c4
+pkgname=docker-sriov-plugin
+pkgver=1.9.1
 pkgrel=1
 pkgdesc='Docker networking plugin for SRIOV and passthrough interfaces'
 arch=('x86_64' 'i686')
-gomodname='github.com/FoxDenHome/docker-sriov-plugin'
-url="https://${gomodname}"
+url="https://github.com/FoxDenHome/${pkgname}"
 license=('Apache-2.0')
 depends=()
-makedepends=('go' 'git')
+makedepends=('go')
 source=(
-    "$pkgname::git+${url}.git"
+    "${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz"
 )
 sha256sums=(
-    'SKIP'
+    'c8b7c345ea8a8b2530fede768a4af51641b966fdd44cb1b23b1efb30a5d00e20'
 )
 
-pkgver() {
-    cd "$pkgname"
-    git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+prepare() {
+    cd "${srcdir}"
+    tar -xf "${pkgname}-${pkgver}.tar.gz"
+    cd "${pkgname}-${pkgver}"
+    go mod download
 }
 
 build() {

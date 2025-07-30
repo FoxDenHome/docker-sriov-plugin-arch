@@ -1,14 +1,13 @@
-pkgbase = docker-sriov-plugin-git
+pkgbase = docker-sriov-plugin
 	pkgdesc = Docker networking plugin for SRIOV and passthrough interfaces
-	pkgver = 1.9.0.r2.ge80e4c4
+	pkgver = 1.9.1
 	pkgrel = 1
 	url = https://github.com/FoxDenHome/docker-sriov-plugin
 	arch = x86_64
 	arch = i686
 	license = Apache-2.0
 	makedepends = go
-	makedepends = git
-	source = docker-sriov-plugin-git::git+https://github.com/FoxDenHome/docker-sriov-plugin.git
-	sha256sums = SKIP
+	source = docker-sriov-plugin.tar.gz::https://github.com/FoxDenHome/docker-sriov-plugin/archive/refs/tags/v1.9.1.tar.gz
+	sha256sums = c8b7c345ea8a8b2530fede768a4af51641b966fdd44cb1b23b1efb30a5d00e20
 
-pkgname = docker-sriov-plugin-git
+pkgname = docker-sriov-plugin
