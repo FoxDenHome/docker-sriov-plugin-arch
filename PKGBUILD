@@ -24,12 +24,12 @@ prepare() {
 }
 
 build() {
-    cd "${srcdir}/${pkgname}"
+    cd "${srcdir}/${pkgname}-${pkgver}"
     go build -trimpath -o docker-sriov-plugin
 }
 
 package() {
-    cd "${srcdir}/${pkgname}"
+    cd "${srcdir}/${pkgname}-${pkgver}"
     install -Dm755 docker-sriov-plugin -t "${pkgdir}/usr/bin/"
     install -Dm644 docker-sriov-plugin.service -t "${pkgdir}/usr/lib/systemd/system/"
 }
